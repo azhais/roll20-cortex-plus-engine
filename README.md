@@ -29,9 +29,9 @@ A Humble Request
 
 ### Recent Changes
 
-**v1.0** 22 June 2014
+**v1.0beta** 17 June 2014
 
-* First version w/ dice roller
+* First version w/ dice pool engine
 
 ### Requirements
 
@@ -74,7 +74,7 @@ The *minimum* required assets for the Firefly script are the dice and plot point
 #### Minimum Graphics Upload
 
 * Upload the 70px yellow and green dice images (in `Firefly Graphics Pack/Dice/70px`)
-  * I suggest tagging them with `firefly` and `dX` (where x = 2, 6, 8, 10, or 12).
+    * I suggest tagging them with `firefly` and `dX` (where x = 2, 6, 8, 10, or 12).
 * Upload the 100px Plot point token  (in `Firefly Graphics Pack/Plot Points`)
 
 
@@ -203,8 +203,6 @@ idea of how to use the system so you can explain it to your players.
 
 ## Usage Instructions
 
-TODO: write this section
-
 ### Firefly Character Sheet
 
 Using the Firefly character sheet is fairly straightforward. Each player, or
@@ -222,17 +220,83 @@ itself* to add the dice to the pool.
 For specialities, distinctions, and signature assets, click the little dice
 icon to add the appropriate dice value to the pool.
 
-* Dice Macros
-  * Dice pool buttons for: adding, clearing, rolling, undo, show
-* Character Sheet
-  * Fill in all data
-  * Mouse over yellow dice images to change their value
-  * Click the NAMES of skills and attributes affect to add the corresponding value to the pool
-  * Click the small dice icon to add skill specialities and distinctions to the pool
+### Dice Macros
 
-TODO: make screenshots and video showing how to use the character sheet
+Ever player has his own dice pool. He/she can perform the following actions on it:
 
-### Recommended Roll 20 Settings
+* *Add dice* - put a single dice into the pool
+    * Manually with the `Pool:Add` Macro
+    * By clicking a button on the character sheet
+    * By selecting a Asset or Complication dice token and clicking `Add-to-Pool`
+* *Roll Pool* - roll the entire pool and keep the two highest values
+* *Show Pool* - print out the contents of the pool to the chat
+* *Clear Pool* - remove all dice from the pool
+* *Undo* - Either removes the last dice added to the pool, or reverses a clear pool action
+
+The GM has access to additional macros. These don’t show any response to the
+players, so the GM can manipulate his pool in private.
+
+* *GM-Pool:Add* - add a dice to the pool silently
+* *GM-Pool:Show* - show the contents of the pool to the GM
+
+### Managing Complications & Assets
+
+Complications and Assets can be added with the `Complication:Add` and
+`Asset:Add` macros, or directly with the chat commands (see examples below).
+
+**Chat Command Examples:**
+
+```
+!token add complication 8 Gut Wound
+!token add asset 6 Medical Gauze
+```
+
+When adding an asset or complication, the script will place a dice token and a
+text label next to each other.
+
+Here is an example using the post-its included in the graphics pack.
+
+![Asset example](docs/tokens-assets.png)\
+
+
+#### Placing Complications & Assets
+
+**How does the script know where to put a complication or asset?**
+
+Good question, I’m glad you asked.
+
+When the player *Bob123* tries to add a complication or asset, the script will
+look for a token with the following properties:
+
+* On the current table
+* Name: *assets* or *complications*
+* Controlled By: *Bob123*
+
+If the script cannot find such a token, it will print out an error.
+
+Personally, I recommend using one of the post-it graphics or notecards in the
+graphics pack. This token can be on the Map layer!
+
+This is how it should look in your token edit window:
+
+![Asset example](docs/tokens-assets-card.png)\
+
+
+#### Roll 20 Limitations
+
+Currently this is the weakest part of the Firefly RPG Roll20 Engine. Roll20
+itself has several outstanding bugs that makes seamless and headache free
+Asset+Complication management all but impossible.
+
+Until these bugs are improved, we will have to live with rudimentary support.
+*It is better than nothing however!*
+
+The current limitations are:
+
+* Limited placement support
+* Dice icon and text label don’t move as a group
+
+## Recommended Roll 20 Settings
 
 #### In Game Settings
 
