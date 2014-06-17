@@ -1,0 +1,11 @@
+FireflyRPG-Roll20-Engine-v*
+Makefile
+preparerelease.sh
+version
+exclude
+CortexPlus-DicePool.js
+cortex-engine.min.js
+CortexConstants.js
+README.html
+cortex-engine.js
+*.zip
