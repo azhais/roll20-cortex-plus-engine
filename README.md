@@ -14,18 +14,20 @@ missing content, or unclear passages to Casey.
 </div>
 </div>
 
+---
+
+**Update Note**: This repository contains just the Firefly / Cortex+ dice pool
+scripts, and not the graphics as I don’t yet have permission to distribute
+them.
+
+---
+
 ## Introduction
 
 **Welcome!** You have in your virtual hands here a digital pack of graphics and
 scripts for improving the Firefly RPG experience on Roll 20.
 
 To get started, you’ll find setup and usage instructions below.
-
-A Humble Request
-
-:   This pack was lovingly crafted over over many, many hours, and I ask you kindly
-    not to redistribute, upload, or share it without permission. Please direct
-    people to the [official homepage][projhome] for the project.
 
 ### Recent Changes
 
