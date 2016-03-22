@@ -1,0 +1,286 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="generator" content="pandoc" />
+      <meta name="author" content="Casey Link" />
+    
+    <title>Firefly RPG Roll 20 Engine</title>
+
+    <style type="text/css">code{white-space: pre;}</style>
+  
+      <style type="text/css">
+  table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+    margin: 0; padding: 0; vertical-align: baseline; border: none; }
+  table.sourceCode { width: 100%; line-height: 100%; }
+  td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+  td.sourceCode { padding-left: 5px; }
+  code > span.kw { color: #007020; font-weight: bold; }
+  code > span.dt { color: #902000; }
+  code > span.dv { color: #40a070; }
+  code > span.bn { color: #40a070; }
+  code > span.fl { color: #40a070; }
+  code > span.ch { color: #4070a0; }
+  code > span.st { color: #4070a0; }
+  code > span.co { color: #60a0b0; font-style: italic; }
+  code > span.ot { color: #007020; }
+  code > span.al { color: #ff0000; font-weight: bold; }
+  code > span.fu { color: #06287e; }
+  code > span.er { color: #ff0000; font-weight: bold; }
+    </style>
+  
+  <link href="docs/css/bootstrap.min.css" rel="stylesheet">
+  <link href="docs/css/pandoc.css" rel="stylesheet">
+
+  <!--[if lt IE 9]><script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+  <![endif]-->
+
+  
+  
+    </head>
+
+  <body data-spy="scroll" data-target="#affix-nav">
+    <div class="container">
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="navbar-inner">
+          <div class="container">
+            <span class="doc-title">Firefly RPG Roll 20 Engine</span>
+            <span class="doc-author">
+                            &nbsp;
+                            <a href="https://ramblurr.github.io/roll20-character-sheets/">
+                              <span class="glyphicon glyphicon-user">
+                </span>
+                                Casey Link
+                              </a>
+              
+                          </span>
+          </div>
+        </div>
+      </nav>
+      
+      <div class="row">
+                <nav id="affix-nav" class="sidebar col-lg-3 hidden-xs">
+        </nav>
+        
+        <div id="doc_content" class="col-lg-9">
+                <div class="panel panel-warning">
+<div class="panel-heading">
+Work in Progress
+</div>
+<div class="panel-body">
+<p>This document is a work in progress. Please report any bugs, typos, missing content, or unclear passages to Casey.</p>
+</div>
+</div>
+<hr />
+<p><strong>Update Note</strong>: This repository contains just the Firefly / Cortex+ dice pool scripts, and not the graphics as I don’t yet have permission to distribute them.</p>
+<hr />
+<h2 id="introduction">Introduction</h2>
+<p><strong>Welcome!</strong> You have in your virtual hands here a digital pack of graphics and scripts for improving the Firefly RPG experience on Roll 20.</p>
+<p>To get started, you’ll find setup and usage instructions below.</p>
+<h3 id="recent-changes">Recent Changes</h3>
+<p><strong>v1.0beta</strong> 17 June 2014</p>
+<ul>
+<li>First version w/ dice pool engine</li>
+</ul>
+<h3 id="requirements">Requirements</h3>
+<ul>
+<li><em>(GM-only)</em> Roll 20 Mentor account</li>
+<li><em>(GM and Players)</em> Modern Web browser: latest Chrome, latest Firefox, or Internet Explorer 10</li>
+</ul>
+<h3 id="features">Features</h3>
+<ul>
+<li>Interactive character sheet</li>
+<li>Point ’n click dice pool building and rolling</li>
+<li>Complication and Assets management</li>
+</ul>
+<h2 id="initial-setup">Initial Setup</h2>
+<p>Setting your Roll 20 campaign with the Firefly RPG Engine is a X step process. It will take about an hour and requires basic understanding of Roll 20’s user interface.</p>
+<h3 id="step-0-subscribe-create-the-campaign">Step 0: Subscribe &amp; Create the campaign</h3>
+<p>You must have a Mentor level account to use the script. If you don’t it simply won’t work. Next, create a fresh campaign in Roll 20.</p>
+<h3 id="step-1-upload-graphics">Step 1: Upload Graphics</h3>
+<p>Included in the Firefly RPG Roll 20 Engine is a collection of original graphical assets designed to mimic the feel of tabletop playing and the aesthetic of the Firefly core rulebook.</p>
+<p>The pack includes:</p>
+<ul>
+<li>d4 - d12 dice images (like the kind used in the Firefly corebook)</li>
+<li>Plot point tokens</li>
+<li>Post-it notes</li>
+<li>Index cards</li>
+<li>Tabletop background images</li>
+</ul>
+<p>The <em>minimum</em> required assets for the Firefly script are the dice and plot point images.</p>
+<h4 id="minimum-graphics-upload">Minimum Graphics Upload</h4>
+<ul>
+<li>Upload the 70px yellow and green dice images (in <code>Firefly Graphics Pack/Dice/70px</code>)
+<ul>
+<li>I suggest tagging them with <code>firefly</code> and <code>dX</code> (where x = 2, 6, 8, 10, or 12).</li>
+</ul></li>
+<li>Upload the 100px Plot point token (in <code>Firefly Graphics Pack/Plot Points</code>)</li>
+</ul>
+<h4 id="recommended-graphics-upload">Recommended Graphics Upload</h4>
+<p>Upload the 70px dice images, 100px plot point tokens, notes, index cards, and background images.</p>
+<h4 id="after-uploading">After Uploading</h4>
+<p>After uploading the images you must find the URLs for the dice images (d4-d12). To do this open your art library, find the dice images, right click on the image and select <em>Copy image URL</em> or <em>Copy image location</em>.</p>
+<p>Paste the image url somewhere safe, you will need it in a later step.</p>
+<p>Do this for each dice image.</p>
+<h3 id="step-2-create-dice-decks">Step 2: Create Dice Decks</h3>
+<p>Required reading: <a href="https://wiki.roll20.net/Card_Decks_and_Rollable_Tables">Roll 20 Deck Documentation</a> for de</p>
+<p>During a game of Firefly RPG, the GM and players will need tokens to represent Big Damn Hero Dice and Plot Points. We use the Roll 20 ‘Decks’ feature to hold and organize these tokens.</p>
+<p>Each deck contains an unlimited number of one card. Players can draw these into their ‘hand’, or the GM can hand them out by dragging and dropping. Everyone can see the number of BDH dice and Plot Points each player has.</p>
+<p>Create a deck containing 1 card for each of the following tokens:</p>
+<ul>
+<li>Plot point</li>
+<li>d4 - d12</li>
+</ul>
+<p>Here is an example for plot points:</p>
+<p><img src="docs/decks-pp-sample.png" alt="PP sample" /><br /> Each deck should use the following options:</p>
+<ul>
+<li><strong>Name:</strong> <em>Plot points, d4, d6, etc</em></li>
+<li><ol start="24" style="list-style-type: lower-alpha">
+<li><strong>Show deck to players</strong></li>
+</ol></li>
+<li><ol start="24" style="list-style-type: lower-alpha">
+<li><strong>Players can draw cards?</strong></li>
+</ol></li>
+<li><ol start="24" style="list-style-type: lower-alpha">
+<li><strong>Cards in deck are infinite?</strong></li>
+</ol></li>
+<li><strong>Discard Pile</strong>: No discard pile</li>
+<li><strong>Cards played to tabletop are played</strong>: Face Up</li>
+<li><strong>Card size on table top</strong>: 70 px x 70 px</li>
+<li><strong>Players See</strong>: (x) Number of Cards, (x) Front of Cards</li>
+<li><strong>GM Sees</strong>: (x) Number of Cards, (x) Front of Cards</li>
+</ul>
+<p>Add one card with the appropriate image. And set the backing to the same image. When you’re finished you should have a list like this:</p>
+<p><img src="docs/decks-full.png" alt="Finished deck example" /><br /> When you have all the decks shown, the side of your Roll 20 table will look like the image below. You can use the mouse to drag and drop the dice off from the decks, as well as deal and recall (take back) ‘cards’ from players.</p>
+<p><img src="docs/decks-table.png" alt="Dice decks on the table" /><br /></p>
+<h3 id="step-3-set-character-sheet">Step 3: Set Character Sheet</h3>
+<p>From your campaign’s main page, click <strong>Campaign Settings</strong>.</p>
+<p>Then, under the <strong>Character Sheet Template</strong> section, choose the Firefly option.</p>
+<h3 id="step-4-upload-firefly-script">Step 4: Upload Firefly Script</h3>
+<p>From your campaign’s main page, click <strong>API Scripts</strong>.</p>
+<p>Add a new script named “<em>Firefly</em>” and copy/paste the contents of the <code>cortex-engine.js</code> file included in the engine zip file.</p>
+<p>At the top of the pasted file you will find a section called <em>Cortex Plus Constants</em>, and you will see some code that says:</p>
+<p><code>/* Edit these URLs to point to your dice assets */</code></p>
+<p>below which you will see some lines such as:</p>
+<pre class="sourceCode javascript"><code class="sourceCode javascript">    tokenD4: <span class="st">&quot;https://s3.amazonaws.com/files.d20.io/images/3908534/h8snbjLuxlVqawSzCsKs5A/thumb.png?1398993124&quot;</span>,
+    tokenD6: <span class="st">&quot;https://s3.amazonaws.com/files.d20.io/images/3907733/MDN2yejuiQS52A-8NECVkg/thumb.png?1398988459&quot;</span>,
+    tokenD8: <span class="st">&quot;https://s3.amazonaws.com/files.d20.io/images/3908533/K3qv6LrN-3Cs3kU1zFIHOg/thumb.png?1398993124&quot;</span>,
+    tokenD10: <span class="st">&quot;https://s3.amazonaws.com/files.d20.io/images/3908531/ptUfuaVxrtPno1K8RG3X-A/thumb.png?1398993123&quot;</span>,
+    tokenD12: <span class="st">&quot;https://s3.amazonaws.com/files.d20.io/images/3908532/SCvdCztxZaHmQxLzLotgag/thumb.png?1398993123&quot;</span>,</code></pre>
+<p>Replace the urls in this section with the URLs you saved in step 1.</p>
+<p><strong>At this point:</strong> Launch your campaign, or if you already have it open, close it and relaunch it.</p>
+<h3 id="step-6-setup-script">Step 6: Setup Script</h3>
+<p>Setting up the script is a two parts.</p>
+<h4 id="a-create-your-gm-list-handout">6a: Create your GM-LIST handout</h4>
+<p>The GM-LIST handout is a handout we use to identify GM players. Any player that has access to the GM-LIST handout has access to special GM commands.</p>
+<p>Create a handout in your campaign called ‘GM-LIST’, and add yourself, and any co-GMs, to the “Can be Edited by” list.</p>
+<h4 id="b-perform-script-setup">6b: Perform script setup</h4>
+<p>In the chat window type: <code>!cortex setup</code></p>
+<p>This will perform initialization routines and create the macros needed to manipulate dice pools.</p>
+<p><strong>At this point</strong> if everything has gone according to plan you should see the following macros in your list.</p>
+<p><img src="docs/macros-list.png" alt="macros list" /><br /> You <strong>and all your players</strong> should check the “In Bar” option so they appear under the player names on the table.</p>
+<h3 id="step-7-youre-done">Step 7: You’re Done!</h3>
+<p>Setup is now complete. I suggest playing with the dice pool buttons to get an idea of how to use the system so you can explain it to your players.</p>
+<h2 id="usage-instructions">Usage Instructions</h2>
+<h3 id="firefly-character-sheet">Firefly Character Sheet</h3>
+<p>Using the Firefly character sheet is fairly straightforward. Each player, or the GM, can fill in the necessary values.</p>
+<p>Editing attributes, skills, distinctions, etc is straightforward, simply fill out the text fields and hover the mouse over the dice image to change its value.</p>
+<p>All attributes, skills, specialities, distinctions, and signature assets have roll buttons to add the corresponding value to the dice pool.</p>
+<p>In the case of attributes and skills, click <em>the name of the attribute or skill itself</em> to add the dice to the pool.</p>
+<p>For specialities, distinctions, and signature assets, click the little dice icon to add the appropriate dice value to the pool.</p>
+<h3 id="dice-macros">Dice Macros</h3>
+<p>Ever player has his own dice pool. He/she can perform the following actions on it:</p>
+<ul>
+<li><em>Add dice</em> - put a single dice into the pool
+<ul>
+<li>Manually with the <code>Pool:Add</code> Macro</li>
+<li>By clicking a button on the character sheet</li>
+<li>By selecting a Asset or Complication dice token and clicking <code>Add-to-Pool</code></li>
+</ul></li>
+<li><em>Roll Pool</em> - roll the entire pool and keep the two highest values</li>
+<li><em>Show Pool</em> - print out the contents of the pool to the chat</li>
+<li><em>Clear Pool</em> - remove all dice from the pool</li>
+<li><em>Undo</em> - Either removes the last dice added to the pool, or reverses a clear pool action</li>
+</ul>
+<p>The GM has access to additional macros. These don’t show any response to the players, so the GM can manipulate his pool in private.</p>
+<ul>
+<li><em>GM-Pool:Add</em> - add a dice to the pool silently</li>
+<li><em>GM-Pool:Show</em> - show the contents of the pool to the GM</li>
+</ul>
+<h3 id="managing-complications-assets">Managing Complications &amp; Assets</h3>
+<p>Complications and Assets can be added with the <code>Complication:Add</code> and <code>Asset:Add</code> macros, or directly with the chat commands (see examples below).</p>
+<p><strong>Chat Command Examples:</strong></p>
+<pre><code>!token add complication 8 Gut Wound
+!token add asset 6 Medical Gauze</code></pre>
+<p>When adding an asset or complication, the script will place a dice token and a text label next to each other.</p>
+<p>Here is an example using the post-its included in the graphics pack.</p>
+<p><img src="docs/tokens-assets.png" alt="Asset example" /><br /></p>
+<h4 id="placing-complications-assets">Placing Complications &amp; Assets</h4>
+<p><strong>How does the script know where to put a complication or asset?</strong></p>
+<p>Good question, I’m glad you asked.</p>
+<p>When the player <em>Bob123</em> tries to add a complication or asset, the script will look for a token with the following properties:</p>
+<ul>
+<li>On the current table</li>
+<li>Name: <em>assets</em> or <em>complications</em></li>
+<li>Controlled By: <em>Bob123</em></li>
+</ul>
+<p>If the script cannot find such a token, it will print out an error.</p>
+<p>Personally, I recommend using one of the post-it graphics or notecards in the graphics pack. This token can be on the Map layer!</p>
+<p>This is how it should look in your token edit window:</p>
+<p><img src="docs/tokens-assets-card.png" alt="Asset example" /><br /></p>
+<h4 id="roll-20-limitations">Roll 20 Limitations</h4>
+<p>Currently this is the weakest part of the Firefly RPG Roll20 Engine. Roll20 itself has several outstanding bugs that makes seamless and headache free Asset+Complication management all but impossible.</p>
+<p>Until these bugs are improved, we will have to live with rudimentary support. <em>It is better than nothing however!</em></p>
+<p>The current limitations are:</p>
+<ul>
+<li>Limited placement support</li>
+<li>Dice icon and text label don’t move as a group</li>
+</ul>
+<h2 id="recommended-roll-20-settings">Recommended Roll 20 Settings</h2>
+<h4 id="in-game-settings">In Game Settings</h4>
+<p>If not using video in Roll 20, it is recommended to set the <strong>Video/Player Avatar Size</strong> option to “Names Only” under the <em>Video+Voice</em> section in the settings tab.</p>
+<ol start="24" style="list-style-type: lower-alpha">
+<li><strong>Show Macro quick bar?</strong></li>
+</ol>
+                </div>
+      </div>
+
+    <!--
+    <div class="navbar navbar-default navbar-fixed-bottom footer">
+    -->
+    <div class="navbar navbar-default footer">
+      <div class="navbar-inner">
+        <div class="container doc-footer">
+          <span>
+                        Copyright &copy; <a href="                                        https://ramblurr.github.io/roll20-character-sheets/ 
+                                      ">Casey Link</a> 2014. All rights reserved.
+            <br />
+                        Generated with
+            <a href="http://johnmacfarlane.net/pandoc/">Pandoc</a>
+          </span>
+        </div>
+      </div>
+    </div>
+
+
+    </div>
+
+    <div id="dock" class="dock">
+      <a href="#" id="go_to_top" class="glyphicon glyphicon-arrow-up">
+      </a>
+      <a href="/" id="full_screen" class="glyphicon glyphicon-resize-full">
+      </a>
+    </div>
+
+    <script src="docs/js/jquery.min.js"></script>
+    <script src="docs/js/bootstrap.min.js"></script>
+    <script src="docs/js/toc.js"></script>
+    <script src="docs/js/pandoc.js"></script>
+  </body>
+</html>
