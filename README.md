@@ -46,6 +46,22 @@ To get started, you’ll find setup and usage instructions below.
 * Point 'n click dice pool building and rolling
 * Complication and Assets management
 
+## Building the Script
+
+The latest version of the built script is [dist/cortex-engine.js](dist/cortex-engine.js)
+
+But you can build it with:
+
+```bash
+make js    # make the javascript 
+make docs  # make the documentation
+```
+
+Building this project requires:
+
+1. yui-compressor
+2. pandoc
+
 ## Initial Setup
 
 Setting your Roll 20 campaign with the Firefly RPG Engine is a X step process. It
