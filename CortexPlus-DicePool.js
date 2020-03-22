@@ -538,7 +538,7 @@ function tokenFindNamedTokens(playerid, name) {
         controlledby: playerid,
         name: name
     });
-    tokens = _.reject(tokens, function(t) { t == null; });
+    // tokens = _.reject(tokens, function(t) { t == null; });
     return tokens;
 }
 
@@ -602,7 +602,7 @@ function tokenCommandAdd(argv, msg) {
         if(type == "asset") {
             var asset_cards = tokenFindNamedTokens(msg.playerid, "assets");
             if(asset_cards.length == 0) {
-                Panel.error(ctx, "Token Error", "Where is your Assets card?");
+                Panel.error(msg, "Token Error", "Where is your Assets card?");
                 return;
             }
             card = asset_cards[0];
